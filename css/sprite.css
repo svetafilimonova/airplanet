@@ -1,0 +1,41 @@
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-blackplane {
+    width: 15px;
+    height: 14px;
+    background-position: -5px -5px;
+}
+
+.sprite-feed {
+    width: 21px;
+    height: 19px;
+    background-position: -30px -5px;
+}
+
+.sprite-feed_black {
+    width: 21px;
+    height: 19px;
+    background-position: -5px -34px;
+}
+
+.sprite-plane {
+    width: 15px;
+    height: 14px;
+    background-position: -36px -34px;
+}
+
+.sprite-team {
+    width: 23px;
+    height: 18px;
+    background-position: -61px -5px;
+}
+
+.sprite-team_black {
+    width: 23px;
+    height: 18px;
+    background-position: -61px -33px;
+}

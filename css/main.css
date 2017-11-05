@@ -1,0 +1,991 @@
+ /*Главная страница*/
+ body,
+ html {
+     height: 100%;
+ }
+
+ body {
+     font-family: 'Roboto', sans-serif;
+     font-weight: lighter;
+     line-height: 1.42;
+     color: #221f1f;
+     font-size: 18px;
+     margin: 0;
+     padding: 0;
+ }
+
+ * {
+     box-sizing: border-box;
+ }
+
+ .clearfix:after {
+     content: "";
+     display: block;
+     clear: both;
+ }
+
+ .wrapper {
+     min-height: 100%;
+     min-width: 1106px;
+     overflow: hidden;
+ }
+
+ .wrapper:after {
+     content: "";
+     display: block;
+     height: 77px;
+ }
+
+ .container {
+     width: 1100px;
+     margin: 0 auto;
+ }
+
+ .title {
+     font-size: 49px;
+     font-weight: bold;
+ }
+
+ .header {
+     background: #1c5bc3;
+     font-size: 0;
+ }
+
+ .header__logo {
+     width: 50%;
+     display: inline-block;
+     vertical-align: middle;
+ }
+
+ .header__logo-picture {
+     background-image: url(../img/logo/logo_header.png);
+     background-repeat: no-repeat;
+     width: 130px;
+     height: 45px;
+     margin: 15px;
+ }
+
+ .header__logo-link {
+     display: inline-block;
+ }
+
+ .contacts {
+     width: 50%;
+     vertical-align: middle;
+     text-align: right;
+     line-height: 1.3;
+     display: inline-block;
+     padding-right: 25px;
+ }
+
+ .contacts__phone {
+     padding-bottom: 0;
+ }
+
+ .contacts__phone-link {
+     font-weight: bold;
+     color: #ffffff;
+     font-size: 21px;
+     text-decoration: none;
+ }
+
+ .contacts__schedule-link {
+     color: #ffffff;
+     opacity: .9;
+     font-weight: bold;
+     font-size: 14px;
+     text-decoration: none;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+ }
+ /*всплывашка*/
+
+ .contacts__elem {
+     position: relative;
+     transition: 3s;
+ }
+
+ .contacts__dropdown {
+     width: 166px;
+     height: 70px;
+     background-color: #ffffff;
+     position: absolute;
+     box-shadow: 0px 0px 10px 0px rgba(23, 59, 117, 0.55);
+     border-radius: 3px 0px 3px 3px;
+     padding: 15px;
+     padding-left: 22px;
+     transform: translateY(19px);
+     z-index: 10;
+     left: -9999px;
+     opacity: 0;
+     transition: opacity 1s;
+ }
+
+ .contacts__dropdown:before {
+     content: "";
+     display: block;
+     height: 30px;
+     left: 0;
+     right: 0;
+     position: absolute;
+     top: -30px;
+ }
+
+ .contacts__elem:hover .contacts__dropdown {
+     opacity: 1;
+     left: 69%;
+ }
+
+ .contacts__dropdown-triangle {
+     border-top: 0px solid transparent;
+     border-bottom: 10px solid white;
+     border-right: 10px solid transparent;
+     border-left: 10px solid transparent;
+     width: 0px;
+     height: 0px;
+     bottom: 100%;
+     left: 88%;
+     position: absolute;
+ }
+
+ .contacts__schedule-text {
+     font-size: 14px;
+     color: #221f1f;
+     text-align: left;
+     padding-bottom: 4px;
+ }
+
+ .contacts__schedule-text_blue {
+     color: #1c5bc3;
+     font-weight: bold;
+ }
+ /*MENU*/
+
+ .menu__icon-about {
+     background-position: -17px -14px;
+ }
+
+ .menu__icon-about_hover {
+     background-position: -17px -69px;
+     opacity: 0;
+     transition: opacity 1s;
+ }
+
+ .menu__icon-team {
+     background-position: -65px -14px;
+ }
+
+ .menu__icon-team_hover {
+     background-position: -65px -71px;
+     opacity: 0;
+     transition: opacity 1s;
+ }
+
+ .menu__icon-feed {
+     background-position: -114px -15px;
+ }
+
+ .menu__icon-feed_hover {
+     background-position: -114px -71px;
+     opacity: 0;
+     transition: opacity 1s;
+ }
+
+ .menu__icon {
+     background-image: url(../img/icons/menu.png);
+     background-repeat: no-repeat;
+     width: 24px;
+     height: 20px;
+     display: inline-block;
+     vertical-align: middle;
+     position: absolute;
+     margin-right: 10px;
+     /*position: absolute;*/
+ }
+
+ .menu__icon-wrapper {
+     width: 25px;
+     height: 20px;
+     position: relative;
+     display: inline-block;
+     vertical-align: middle;
+     margin-right: 10px;
+ }
+
+ .menu__list {
+     list-style: none;
+     padding-left: 15px;
+     padding-top: 20px;
+ }
+
+ .menu__item {
+     margin-bottom: 24px;
+     letter-spacing: 2px;
+ }
+
+ .menu__link {
+     text-decoration: none;
+     display: inline-block;
+     transition: opacity 1s;
+ }
+
+ .menu__text {
+     color: #1c5bc3;
+     text-transform: uppercase;
+     font-size: 12px;
+     font-weight: bold;
+     display: inline-block;
+     transition: 1s;
+ }
+
+ .menu__link:hover .menu__icon-about_hover {
+     opacity: 1;
+     background-position: -17px -69px;
+ }
+
+ .menu__link:hover .menu__icon-team_hover {
+     opacity: 1;
+     background-position: -65px -71px;
+ }
+
+ .menu__link:hover .menu__icon-feed_hover {
+     opacity: 1;
+     background-position: -114px -71px;
+ }
+
+ .menu__link:hover .menu__text {
+     color: #221f1f;
+ }
+
+ .menu__link-black .menu__text {
+     color: #221f1f;
+ }
+
+ .menu__link-black .menu__icon-about {
+     background-position: -17px -69px;
+ }
+
+ .menu__link-black .menu__icon-feed {
+     background-position: -114px -71px;
+ }
+
+ .menu__link-black .menu__icon-team {
+     background-position: -65px -71px;
+ }
+
+ .sidebar {
+     width: 18%;
+     float: left;
+ }
+
+ .about {
+     width: 80%;
+     float: left;
+ }
+
+ .about__title {
+     position: relative;
+ }
+
+ .about__title-header {
+     position: absolute;
+     top: 128px;
+     left: 73px;
+ }
+
+ .about__title-image {
+     background-image: url(../img/bg/about.png);
+     background-size: cover;
+     background-position: 9% 91%;
+     width: 879px;
+     height: 354px;
+     margin-bottom: 25px;
+ }
+
+ .page-text {
+     width: 700px;
+     line-height: 1.5em;
+ }
+
+ .booking {
+     width: 700px;
+     padding: 1px 55px 1px 28px;
+     margin-bottom: 52px;
+     background-color: #1c5bc3;
+     color: #ffffff;
+     font-size: 18px;
+ }
+
+ .booking__info-tel {
+     font-weight: bold;
+ }
+
+ .booking__info-request {
+     text-decoration: underline;
+     font-weight: bold;
+ }
+
+ .partners {
+     /*width: 700px;   */
+ }
+
+ .partners__title {
+     margin-bottom: 36px;
+ }
+
+ .partners__item {
+     margin-right: 80px;
+     margin-bottom: 22px;
+     display: inline-block;
+ }
+
+ .partners__list {
+     list-style: none;
+     padding-left: 0;
+ }
+
+ .partners__link {
+     display: inline-block;
+ }
+
+ .partners__link-block {
+     width: 180px;
+     height: 100px;
+     background-repeat: no-repeat;
+     background-position: center;
+     filter: grayscale(100%);
+     transition: .3s;
+ }
+
+ .partners__link-block:hover {
+     filter: grayscale(0%);
+ }
+
+ .copyright__text-school {
+     font-weight: bold;
+     display: inline-block;
+     /*text-decoration: underline  #809ad7;*/
+     border-bottom: 2px solid #809ad7;
+     vertical-align: baseline;
+     line-height: .95;
+     color: #ffffff;
+     text-decoration: none;
+ }
+
+ .copyright__text-author {
+     font-weight: bold;
+ }
+
+ .copyright {
+     text-align: left;
+     width: 33%;
+     font-size: 14px;
+     display: inline-block;
+     /*padding: 10px 0 21px 5px;*/
+     /*margin: 10px 10px 5px;*/
+ }
+
+ .copyright__text {
+     font-size: 14px;
+     margin: 0px;
+     width: 280px;
+ }
+
+ .socials__text {
+     font-size: 14px;
+     font-weight: bold;
+     margin-bottom: 5px;
+     margin-top: 5px;
+ }
+
+ .socials__link {
+     background-image: url(../img/icons/socials.png);
+     background-repeat: no-repeat;
+     display: inline-block;
+     width: 20px;
+     height: 20px;
+     opacity: .8;
+     transition: 1s;
+ }
+
+ .socials__link:hover {
+     opacity: 1;
+ }
+
+ .socials__link_vk {
+     background-position: -5px -5px;
+ }
+
+ .socials__link_fb {
+     background-position: -65px -5px;
+ }
+
+ .socials__link_g {
+     background-position: -35px -35px;
+ }
+
+ .socials__link_tw {
+     background-position: -5px -35px;
+ }
+
+ .socials__link_mail {
+     background-position: -35px -5px;
+ }
+
+ .socials__list {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+ }
+
+ .socials__item {
+     display: inline-block;
+     padding-right: 11px;
+ }
+
+ .socials {
+     display: inline-block;
+     /*margin: 10px 50px;*/
+     width: 33%;
+     text-align: right;
+     padding-right: 27px;
+ }
+
+ .footer__logo {
+     display: inline-block;
+     width: 33%;
+     text-align: center;
+ }
+
+ .footer__logo-picture {
+     background-image: url(../img/logo/logo_header.png);
+     background-repeat: no-repeat;
+     width: 148px;
+     height: 45px;
+     display: inline-block;
+     /*margin: 18px; */
+     text-align: center;
+ }
+
+ .footer__logo-link {
+     display: inline-block;
+ }
+
+ .footer {
+     background: #1c5bc3;
+     color: #ffffff;
+     font-size: 0;
+     vertical-align: middle;
+     height: 77px;
+     margin-top: -77px;
+     min-width: 1106px;
+     padding-top: 10px;
+     padding-bottom: 10px;
+ }
+
+ .page-text__bold {
+     font-weight: bold;
+ }
+ /*страница отзывов*/
+
+ .page-contents {
+     width: 82%;
+     float: left;
+ }
+
+ .crumbles {
+     margin-top: 16px;
+     display: inline-block;
+ }
+
+ .crumbles__list {
+     list-style: none;
+     padding-left: 9px;
+     margin-bottom: -7px;
+     margin-top: 22px;
+ }
+
+ .crumbles__item {
+     display: inline-block;
+ }
+
+ .crumbles__link {
+     color: #497ccf;
+     font-size: 14px;
+     font-style: italic;
+     text-decoration: none;
+     display: inline-block;
+ }
+
+ .crumbles__link_border {
+     border-bottom: 1px solid #c4cfeb;
+     display: inline-block;
+     line-height: 0.9;
+ }
+
+ .crumbles__link_current {
+     color: #656464;
+     font-size: 14px;
+     font-style: italic;
+     border-bottom: none;
+ }
+
+ .crumbles__link_slash:after {
+     content: " / ";
+     color: #656464;
+     padding-right: 2px;
+     border-bottom: none;
+ }
+
+ .feed__title {
+     margin-top: 7px;
+     margin-bottom: -5px;
+     padding-left: 7px;
+ }
+
+ .feed__list {
+     list-style: none;
+     padding-left: 0;
+     margin-bottom: 7px;
+ }
+
+ .feed__pic {
+     width: 162px;
+     height: 162px;
+     border-radius: 50%;
+     overflow: hidden;
+     float: left;
+     margin-right: 25px;
+     margin-top: -16px;
+     margin-left: 9px;
+ }
+
+ .feed__review {
+     width: 700px;
+     display: inline-block;
+ }
+
+ .feed__item {
+     border-bottom: 2px solid #f5f5f5;
+     padding: 31px 0 30px 0;
+ }
+
+ .feed__item_last {
+     border-bottom: none;
+ }
+
+ .review__date {
+     font-size: 14px;
+     display: block;
+     margin-top: -15px;
+     color: #656464;
+ }
+
+ .review__name {
+     font-size: 18px;
+     font-weight: bold;
+     display: block;
+ }
+
+ .review__text {
+     font-size: 18px;
+ }
+ /*форма для отзывов*/
+
+ .comment {
+     width: 703px;
+     height: 427px;
+     background-color: #f5f5f5;
+     border-radius: 3px;
+     padding: 37px 70px;
+     margin-bottom: 83px;
+ }
+
+ .comment__row {
+     display: inline-block;
+     margin-bottom: -22px;
+ }
+
+ .comment__title {
+     margin-bottom: 9px;
+ }
+
+ .comment__form-label {
+     display: block;
+     float: left;
+     width: 269px;
+ }
+
+ .comment__form-title {
+     color: #3b3939;
+     font-size: 14px;
+     margin-bottom: 7px;
+     width: 560px;
+ }
+
+ .comment__form-label:first-child {
+     margin-right: 23px;
+ }
+
+ .comment__form-input {
+     width: 100%;
+     height: 45px;
+     padding: 10px 12px 11px;
+     font-size: 14px;
+     border-radius: 3px;
+     border: none;
+     margin-bottom: 27px;
+     border: 1px solid transparent;
+ }
+
+ .comment__form-input::-webkit-input-placeholder {
+     color: #a9a8a8;
+ }
+
+ .comment__form-input::-moz-placeholder {
+     color: #a9a8a8;
+ }
+
+ .comment__form-textarea {
+     height: 90px;
+     width: 100%;
+     border: none;
+     border-radius: 3px;
+     padding: 7px 9px;
+     resize: none;
+     font-size: 14px;
+     border: 1px solid transparent;
+ }
+
+ .comment__form-label {
+     font-size: 14px;
+ }
+
+ .comment__form-submit {
+     background-color: #1c5bc3;
+     color: white;
+     font-weight: bold;
+     font-size: 12px;
+     padding: 10px;
+     border-radius: 3px;
+     border: none;
+     margin-bottom: 10px;
+     /*background-image: url(img/icons/white_plane.png);*/
+ }
+
+ .comment__form-input:focus {
+     outline: none;
+     border: 1px solid #1c5bc3;
+ }
+
+ .comment__form-textarea:focus {
+     outline: none;
+     border: 1px solid #1c5bc3;
+ }
+
+ .comment__form-submit:focus {
+     outline: none;
+ }
+
+ .comment__controls-title {
+     font-size: 14px;
+     margin-bottom: 5px;
+ }
+
+ .comment__radio-elem {
+     display: inline-block;
+     vertical-align: middle;
+     display: none;
+ }
+
+ .comment__radio-text {
+     display: inline-block;
+     vertical-align: middle;
+     font-size: 14px;
+     margin-right: 16px;
+     margin-top: -9px;
+ }
+
+ .comment__radio-elem:checked+.comment__radio-fake {
+     border: 1px solid #1c5bc3;
+ }
+
+ .comment__radio-elem:checked+.comment__radio-fake+.comment__radio-text {
+     color: #1c5bc3;
+ }
+
+ .comment__radio-elem:checked+.comment__radio-fake:after {
+     display: block;
+ }
+
+ .comment__radio-fake {
+     display: inline-block;
+     width: 20px;
+     height: 20px;
+     border-radius: 50%;
+     border: 1px solid #d0d0d0;
+     background: -webkit-linear-gradient(#fefefe 0%, #efefef 99%);
+     background: linear-gradient(#fefefe 0%, #efefef 99%);
+     position: relative;
+ }
+
+ .comment__radio-fake:after {
+     content: "";
+     display: none;
+     width: 8px;
+     height: 8px;
+     background-color: #1c5bc3;
+     border-radius: 50%;
+     position: absolute;
+     top: 5px;
+     left: 5px;
+ }
+
+ .comment__buttons {
+     margin-top: 8px;
+ }
+
+ .comment__controls {
+     width: 50%;
+     float: left;
+ }
+
+ .comment__controls-right {
+     width: 50%;
+     float: left;
+     text-align: right;
+ }
+
+ .comment__controls-submit {
+     background-color: #1c5bc3;
+     background-image: url(../img/icons/white_plane.png);
+     background-repeat: no-repeat;
+     background-position: 87% 50%;
+     width: 153px;
+     height: 44px;
+     border: none;
+     border-radius: 3px;
+     text-transform: uppercase;
+     color: #ffffff;
+     font-weight: bold;
+     font-size: 12px;
+     display: inline-block;
+     letter-spacing: 2px;
+     text-align: left;
+     padding-left: 19px;
+     margin-top: 4px;
+     cursor: pointer;
+ }
+ /*Нумерация страниц с отзывами*/
+
+ .page-link {
+     display: inline-block;
+     padding-left: 222px;
+     margin-bottom: 60px;
+     /*width:300px;*/
+ }
+
+ .page-link__cap {
+     font-size: 14px;
+     color: #adacac;
+     margin-right: -25px;
+ }
+
+ .page-link__number {
+     text-decoration: none;
+     color: #221f1f;
+     padding: 4px 3px;
+     font-weight: bold;
+     border-radius: 3px;
+     font-size: 14px;
+     display: inline-block;
+     width: 26px;
+     height: 26px;
+     text-align: center;
+ }
+
+ .page-link__list {
+     list-style: none;
+     display: inline-block;
+     font-size: 0;
+ }
+
+ .page-link__item {
+     display: inline-block;
+ }
+
+ .page-link__arrow {
+     text-decoration: none;
+     padding-right: 6px;
+ }
+
+ .page-link__number:hover {
+     color: #ffffff;
+     background: #1c5bc3;
+ }
+
+ .page-link__arrow-left {
+     color: #adacac;
+ }
+
+ .page-link__arrow-right {
+     padding-left: 9px;
+ }
+ /*Страница Экипаж*/
+
+ .team__title {
+     margin-bottom: 32px;
+     margin-top: 5px;
+     margin-left: 5px;
+ }
+
+ .team__list {
+     list-style: none;
+     padding-left: 9px;
+ }
+
+ .team__item-photo {
+     width: 160px;
+     height: 160px;
+     border-radius: 50%;
+     overflow: hidden;
+     text-align: center;
+     display: inline-block;
+     margin-bottom: 12px;
+ }
+
+ .team__item-one {
+     background-position: 19% 23%;
+ }
+
+ .team__item-two {
+     background-position: 35% 9%;
+ }
+
+ .team__item-three {
+     background-position: 71% 50%;
+ }
+
+ .team__item-four {
+     background-position: 80% 14%;
+ }
+
+ .team__item-five {
+     background-position: 80% 14%;
+ }
+
+ .team__item-six {
+     background-position: 88% 13%;
+ }
+
+ .team__item-name {
+     font-size: 18px;
+     font-weight: bold;
+ }
+
+ .team__item-job {
+     color: #1c5bc3;
+     font-size: 14px;
+     font-weight: bold;
+ }
+
+ .team__item-text {
+     font-size: 14px;
+     width: 260px;
+     text-align: center;
+     line-height: 1.4em;
+ }
+
+ .team__item {
+     display: inline-block;
+     width: 260px;
+     text-align: center;
+     vertical-align: top;
+     margin-right: 34px;
+     margin-bottom: 44px;
+ }
+ /*Страница Интро*/
+
+ .wrapper_greeting {
+     background-image: url(../img/bg/layer.jpg);
+     background-repeat: no-repeat;
+     background-position: center center;
+     background-size: cover;
+     height: 100%;
+     text-align: center;
+     min-width: initial;
+ }
+
+ .wrapper_greeting:before {
+     content: "";
+     height: 100%;
+     width: 0;
+     display: inline-block;
+     vertical-align: middle;
+ }
+
+ .greeting {
+     width: 212px;
+     display: inline-block;
+     vertical-align: middle;
+     animation: fade 3s ease-in;
+ }
+
+ .greeting__logo {
+     background-image: url(../img/logo/logo_intro.png);
+     background-repeat: no-repeat;
+     width: 212px;
+     height: 220px;
+     background-position: center center;
+     margin-bottom: 23px;
+ }
+
+ .greeting__button-link {
+     display: inline-block;
+ }
+
+ .greeting__button-submit {
+     display: inline-block;
+     text-decoration: none;
+     color: #1d5bc3;
+     font-weight: bold;
+     font-size: 12px;
+     text-transform: uppercase;
+     text-align: left;
+     padding-left: 19px;
+     padding-top: 15px;
+     border: 1px solid #1d5bc3;
+     border-radius: 3px;
+     width: 207px;
+     height: 45px;
+     background-color: transparent;
+     background-image: url(../img/icons/plane.png);
+     background-repeat: no-repeat;
+     background-position: 89% 48%;
+     letter-spacing: 2px;
+     transition: .5s;
+     cursor: pointer;
+ }
+
+ .greeting__button-submit:hover {
+     background-color: #1d5bc3;
+     background-image: url(../img/icons/main_icon.png);
+     color: #ffffff;
+ }
+
+ @keyframes fade {
+     10% {
+         opacity: 0.1;
+     }
+     20% {
+         opacity: 0.2;
+     }
+     40% {
+         opacity: 0.4;
+     }
+     60% {
+         opacity: 0.6;
+     }
+     100% {
+         opacity: 1;
+     }
+ }
